@@ -4,7 +4,7 @@ title: Pico de Orizaba (5645)
 description: Как залезть на гору
 summary: Инструкции как 
 comments: true
-tags: [мексика,хайкинг]
+tags: [мексика,хайкинг,альпинизм]
 ---
 
 <p class="alert warning" style="font-size: 14px; font-style: italic">
