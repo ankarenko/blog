@@ -1,0 +1,25 @@
+
+{% assign alt = include.alt | default: include.caption %}
+{% assign url_modified = page.url | remove_first: "/" | replace: "/", "-" %}
+{% 
+  assign src = site.baseurl |
+  append: page.images_base | 
+  append: "/" | 
+  append: url_modified | 
+  append: "/" | 
+  append: include.src 
+%}
+
+<div class="image-container {{ include.class }}" style="{{ include.style }}">
+  {% if include.clickable == false %}
+    <img src="{{ src }}" alt="{{ alt }}">
+  {% else %}
+    <a href="{{ src }}">
+      <img src="{{ src }}" alt="{{ alt }}">
+    </a>
+  {% endif %}
+  
+  <p>
+    {{ include.caption }}
+  </p>
+</div>
