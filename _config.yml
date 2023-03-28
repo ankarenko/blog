@@ -1,7 +1,7 @@
-site: Sidey
+site: Blog
 url: #yoururl
-title: Sidey
-description: Simple and minimalistic jekyll blogging theme.
+title: Blog
+description: Ламповый блог про путешествия.
 twitter:
   username: #yourusername
   card: summary
