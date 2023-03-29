@@ -18,6 +18,7 @@ baseurl: "/blog"
 
 highlighter: none
 
+
 exclude:
   - .jekyll-cache
   
@@ -32,7 +33,7 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-sitemap  
+  - jekyll-sitemap
 
 collections:
   pages:
@@ -40,7 +41,7 @@ collections:
     permalink: /:name
   posts:
     output: true
-    permalink: /:year/:month/:day/:slug
+    permalink: /:year-:month-:day-:slug
   
 defaults:
   -
@@ -48,7 +49,11 @@ defaults:
       path: ""
     values:
       layout: "default"
-      images_base: "/assets/images"
+      images_root_path: "/assets/images"
+      sizes:
+        - width: 320
+        - width: 480
+        - width: 800
   -
     scope:
       path: ""

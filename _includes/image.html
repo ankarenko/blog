@@ -1,21 +1,26 @@
 
 {% assign alt = include.alt | default: include.caption %}
-{% assign url_modified = page.url | remove_first: "/" | replace: "/", "-" %}
-{% 
-  assign src = site.baseurl |
-  append: page.images_base | 
-  append: "/" | 
-  append: url_modified | 
-  append: "/" | 
-  append: include.src 
-%}
+
+{%- capture path_base -%}
+{{ site.baseurl }}{{ page.images_root_path }}{{ page.url }}
+{%- endcapture -%}
+
+{%- capture src -%}
+{{ path_base }}/{{ include.file }}
+{%- endcapture -%}
+
+{% capture srcset %}
+{% for i in page.sizes %}
+  {{ path_base }}/resized/{{ i.width }}/{{ include.file }} {{ i.width }}w,
+{% endfor %}
+{% endcapture %}
 
 <div class="image-container {{ include.class }}" style="{{ include.style }}">
   {% if include.clickable == false %}
-    <img src="{{ src }}" alt="{{ alt }}">
+    <img src="{{ src }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }} {{ src }} 1024w">
   {% else %}
     <a href="{{ src }}">
-      <img src="{{ src }}" alt="{{ alt }}">
+      <img src="{{ src }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }} {{ src }} 1024w">
     </a>
   {% endif %}
   
