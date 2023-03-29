@@ -65,6 +65,10 @@ p.alert.warning {
 	margin: 1rem 0;
 }
 
+.post h1, .post h2, .post h3 {
+  text-align: center;
+}
+
 .post h4 {
   margin: 0.2rem 0;
 }
@@ -240,6 +244,7 @@ table {
   border: 1px solid rgb(113, 113, 113);
   border-radius: 10px;
   padding: 5px;
+  margin: 10px 0px ;
 }
 
 table, td {
@@ -260,7 +265,7 @@ header li {
     display: inline;
 	margin-right: 1rem;
 }
-div.image-container {
+div.image-container, p.alert {
   border-radius: 0px;
   margin-right: -32px;
   margin-left: -32px;
