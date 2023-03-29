@@ -3,16 +3,20 @@ INPUT_PATH=./test/*
 IMAGE_DIRECTORY=${PWD}/assets/images
 OUTPUT_WS="800 480 320"
 
-mkdir -p resized
+#clean
+#for d in  $IMAGE_DIRECTORY/*; do
+#  [ -L "${d%/}" ] && continue
+#  rm -rf $d/resized
+#done
 
 for d in  $IMAGE_DIRECTORY/*; do
   [ -L "${d%/}" ] && continue
 
   image_folder=$(basename $d)
-
+  
   echo "Processing $d..."
   for w in $OUTPUT_WS; do
-    out_path=$OUTPUT_PATH/$image_folder/resized/$w
+    out_path=$OUTPUT_PATH/resized/$image_folder/$w
     mkdir $out_path -p
 
     echo "Generating $w..." && \

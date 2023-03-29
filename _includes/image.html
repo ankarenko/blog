@@ -1,17 +1,14 @@
 
 {% assign alt = include.alt | default: include.caption %}
 
-{%- capture path_base -%}
-{{ site.baseurl }}{{ page.images_root_path }}{{ page.url }}
-{%- endcapture -%}
 
 {%- capture src -%}
-{{ path_base }}/{{ include.file }}
+{{ site.baseurl }}{{ page.images_root_path }}{{ page.url }}/{{ include.file }}
 {%- endcapture -%}
 
 {% capture srcset %}
 {% for i in page.sizes %}
-  {{ path_base }}/resized/{{ i.width }}/{{ include.file }} {{ i.width }}w,
+{{ site.baseurl }}{{ page.images_root_path }}/resized{{ page.url }}{{ i.width }}/{{ include.file }} {{ i.width }}w,
 {% endfor %}
 {% endcapture %}
 
