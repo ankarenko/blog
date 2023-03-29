@@ -8,7 +8,7 @@
 
 {% capture srcset %}
 {% for i in page.sizes %}
-{{ site.baseurl }}{{ page.images_root_path }}/resized{{ page.url }}{{ i.width }}/{{ include.file }} {{ i.width }}w,
+{{ site.baseurl }}{{ page.images_root_path }}/resized{{ page.url }}/{{ i.width }}/{{ include.file }} {{ i.width }}w,
 {% endfor %}
 {% endcapture %}
 

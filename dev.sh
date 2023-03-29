@@ -1,4 +1,5 @@
-docker image build -t jekyll_local . &&
+sh ./build_images.sh && \
+docker image build -t jekyll_local . && \
 docker run --rm \
   -v="$PWD:/srv/jekyll" \
   -p 4000:4000 \

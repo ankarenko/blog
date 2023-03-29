@@ -3,11 +3,7 @@ INPUT_PATH=./test/*
 IMAGE_DIRECTORY=${PWD}/assets/images
 OUTPUT_WS="800 480 320"
 
-#clean
-#for d in  $IMAGE_DIRECTORY/*; do
-#  [ -L "${d%/}" ] && continue
-#  rm -rf $d/resized
-#done
+rm -rf $IMAGE_DIRECTORY/resized
 
 for d in  $IMAGE_DIRECTORY/*; do
   [ -L "${d%/}" ] && continue
