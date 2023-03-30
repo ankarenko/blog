@@ -1,26 +1,32 @@
 
 {% assign alt = include.alt | default: include.caption %}
 
-
 {%- capture src -%}
 {{ site.baseurl }}{{ page.images_root_path }}{{ page.url }}/{{ include.file }}
 {%- endcapture -%}
 
-{% capture srcset %}
-{% for i in page.sizes %}
-{{ site.baseurl }}{{ page.images_root_path }}/resized{{ page.url }}/{{ i.width }}/{{ include.file }} {{ i.width }}w,
-{% endfor %}
-{% endcapture %}
-
 <div class="image-container {{ include.class }}" style="{{ include.style }}">
-  {% if include.clickable == false %}
-    <img src="{{ src }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }} {{ src }} 1024w">
-  {% else %}
-    <a href="{{ src }}">
-      <img src="{{ src }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }} {{ src }} 1024w">
+  {% if include.clickable != false %}
+    <a href="{{ src }}.jpg">
+  {% endif %}
+  <picture>
+    {% for i in page.sizes %}
+      {%- capture srcresized -%}
+        {{ site.baseurl }}{{ page.images_root_path }}/resized{{ page.url }}/{{ i.width }}/{{ include.file }}
+      {%- endcapture -%}
+
+      <source media="(max-width: {{ i.width }}px)" srcset="{{ srcresized }}.webP" type="image/webp">
+      <source media="(max-width: {{ i.width }}px)" srcset="{{ srcresized }}.jpg" type="image/jpg">
+    {% endfor %}
+    
+    <source srcset="{{ src }}.webP" type="image/webp">
+    <source srcset="{{ src }}.jpg" type="image/jpg">
+    <img src="{{ src }}.jpg" alt="{{ alt }}">
+  </picture>
+  {% if include.clickable != false %}
     </a>
   {% endif %}
-  
+
   <p>
     {{ include.caption }}
   </p>

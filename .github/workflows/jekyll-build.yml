@@ -22,8 +22,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      - name: Build resized images
-        run: ./build_images.sh
+      - name: Generating resized images
+        run: ./gen_resized.sh
         shell: bash
         
       # Use GitHub Deploy Action to build and deploy to Github
