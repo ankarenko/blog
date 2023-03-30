@@ -51,8 +51,6 @@ defaults:
       layout: "default"
       images_root_path: "/assets/images"
       sizes:
-        - width: 320
-        - width: 480
         - width: 800
   -
     scope:
