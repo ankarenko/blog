@@ -50,9 +50,13 @@ defaults:
     values:
       layout: "default"
       images_root_path: "/assets/images"
-      sizes:
+      sizes: 
+        - width: 1300
+          size: "lg"
         - width: 800
-        - width: 1200
+          size: "md"
+        - width: 420
+          size: "sm"
   -
     scope:
       path: ""

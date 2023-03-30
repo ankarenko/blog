@@ -9,10 +9,12 @@
   {% if include.clickable != false %}
     <a href="{{ src }}.jpg">
   {% endif %}
+
+  {% assign arr = page.sizes | sort: "width" %}
   <picture>
-    {% for i in page.sizes %}
+    {% for i in arr %}
       {%- capture srcresized -%}
-        {{ site.baseurl }}{{ page.images_root_path }}/resized{{ page.url }}/{{ i.width }}/{{ include.file }}
+        {{ site.baseurl }}{{ page.images_root_path }}/resized{{ page.url }}/{{ i.size }}/{{ include.file }}
       {%- endcapture -%}
 
       <source media="(max-width: {{ i.width }}px)" srcset="{{ srcresized }}.webP" type="image/webp">
