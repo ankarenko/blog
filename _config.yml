@@ -52,6 +52,7 @@ defaults:
       images_root_path: "/assets/images"
       sizes:
         - width: 800
+        - width: 1200
   -
     scope:
       path: ""

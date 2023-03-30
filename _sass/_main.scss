@@ -178,6 +178,11 @@ header,section {
 	padding:1rem;
 }
 
+.post .title {
+  text-align: center; 
+  margin: 0px 3rem
+}
+
 blockquote {
 	font-style: italic;
     border-left: 5px solid #ececec;
@@ -270,6 +275,11 @@ div.image-container, p.alert {
   margin-right: -32px;
   margin-left: -32px;
 }
+
+.post .title {
+  margin: 0px 1rem
+}
+
 div.image-container img {
   border-radius: 0px;
 }

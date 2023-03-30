@@ -1,7 +1,7 @@
 OUTPUT_PATH=${PWD}/assets/images
 INPUT_PATH=./test/*
 IMAGE_DIRECTORY=${PWD}/assets/images
-OUTPUT_WS="800"
+OUTPUT_WS="1200 800"
 
 rm -rf $IMAGE_DIRECTORY/resized
 rm -rf $IMAGE_DIRECTORY/webp
