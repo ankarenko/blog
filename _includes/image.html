@@ -25,13 +25,13 @@
         {{ base }}/{{ i.size }}/{{ include.file }}
       {%- endcapture -%}
 
-      <source media="(max-width: {{ i.width }}px)" srcset="{{ srcresized }}.webP" type="image/webp">
-      <source media="(max-width: {{ i.width }}px)" srcset="{{ srcresized }}.jpg" type="image/jpg">
+      <source media="(max-width: {{ i.width }}px)" data-srcset="{{ srcresized }}.webP" type="image/webp">
+      <source media="(max-width: {{ i.width }}px)" data-srcset="{{ srcresized }}.jpg" type="image/jpg">
     {% endfor %}
     
-    <source srcset="{{ src }}.webP" type="image/webp">
-    <source srcset="{{ src }}.jpg" type="image/jpg">
-    <img src="{{ src }}.jpg" alt="{{ alt }}">
+    <source data-srcset="{{ src }}.webP" type="image/webp">
+    <source data-srcset="{{ src }}.jpg" type="image/jpg">
+    <img data-src="{{ src }}.jpg" alt="{{ alt }}">
   </picture>
   {% if include.clickable != false %}
     </a>

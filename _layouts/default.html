@@ -6,6 +6,9 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="en" >
+  
+
+
   {% include head.html %}  
   <body>
     <div class="mainwrapper">
@@ -18,6 +21,14 @@ layout: compress
       </main>
     </div>
     
-            
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.0/dist/lazyload.min.js">
+    </script>
+    <script>
+       var lazyLoad = new LazyLoad({
+        elements_selector: ".lazy",
+        cancel_on_exit: true
+      });
+    </script> 
   </body>
+
 </html>
