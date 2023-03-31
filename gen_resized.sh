@@ -15,13 +15,34 @@ for d in  $IMAGE_DIRECTORY/*; do
 
   echo "Processing $d..."
 
+  mkdir -p $OUTPUT_PATH/resized/$image_folder/default
+
+  for i in $(find "$d" -name '*.jpg' -o -name '*.webP'); do 
+    filesize=$(stat --format=%s "$i")
+    max_allowed=1000000
+    out_file=$OUTPUT_PATH/resized/$image_folder/default/$(basename $i)
+
+    if [ $filesize -ge $max_allowed ]; then
+      echo "Compressing $(basename $i)..."
+      convert \
+        -strip \
+        -interlace Plane \
+        -gaussian-blur 0.05 \
+        -quality 85% \
+        $i \
+        $out_file
+    else 
+      cp $i $out_file
+    fi
+  done
+
   for i in "${!OUTPUT_WS[@]}"; do 
     w=${OUTPUT_WS[$i]}
     s=${SIZES[$i]}  
     out_path=$OUTPUT_PATH/resized/$image_folder/$s
     mkdir $out_path -p
 
-    echo $OUTPUT_PATH[$i]
+    echo "$out_path"
 
     echo "Generating $s..." && \
     mogrify \
@@ -38,4 +59,5 @@ for d in  $IMAGE_DIRECTORY/*; do
     -strip $d/*
   done
 
+  
 done
