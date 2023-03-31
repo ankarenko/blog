@@ -1,5 +1,5 @@
 site: Blog
-url: #ankarenko.live
+url: https://ankarenko.live
 title: Blog
 description: Ламповый блог про путешествия.
 twitter:
@@ -14,7 +14,7 @@ author:
   url: yoururl
 permalink: pretty
 
-baseurl: "/blog"
+baseurl: ""
 
 highlighter: none
 
