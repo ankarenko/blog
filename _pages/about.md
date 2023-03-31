@@ -1,6 +1,8 @@
 ---
 layout: page
-title: About
+title: Обо мне
 ---
 
-It's just me
+{%
+  include about.html
+%}

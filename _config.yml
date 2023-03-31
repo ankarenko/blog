@@ -9,7 +9,7 @@ twitter:
 author:
   twitter: #yourusername
   name: #yourusername
-  avatar:
+  avatar: /me.png
   email: #youremail
   url: yoururl
 permalink: pretty
