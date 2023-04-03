@@ -6,29 +6,44 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="en" >
-  
-
-
   {% include head.html %}  
   <body>
-    <div class="mainwrapper">
-      <main role="main">
-      
-        {% include navigation.html %}
-        
-        {{ content }}
-                
-      </main>
-    </div>
+    <main role="main">
     
+      {% include navigation.html %}
+      
+      {{ content }}
+              
+    </main>
+    <script>
+      function updateGap() {
+        var isMobile = document.body.clientWidth <= 720;
+        var els = document.getElementsByClassName("gap");
+        var width = isMobile? document.body.clientWidth : (document.getElementsByTagName('section')[0].clientWidth - 32);
+        console.log(width);
+        for (let i=0; i < els.length; ++i) {
+          var el = els[i];
+          var newHeight = width * parseFloat(el.dataset.ratio);
+          console.log(newHeight);
+          el.style = "position: relative; height:" + newHeight + "px; width: 100%;";
+        }
+      };
+      window.addEventListener("resize", updateGap);
+      updateGap();
+      //window.addEventListener("DOMContentLoaded", updateGap, false);
+
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.0/dist/lazyload.min.js">
     </script>
+
     <script>
        var lazyLoad = new LazyLoad({
         elements_selector: ".lazy",
         cancel_on_exit: true
       });
     </script> 
+
+    
   </body>
 
 </html>

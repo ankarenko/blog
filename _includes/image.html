@@ -1,5 +1,6 @@
 
 {% assign alt = include.alt | default: include.caption %}
+{% assign ratio = include.ratio | default: 0.75 %}
 
 {%- capture base -%}
 {{ site.baseurl }}{{ page.images_root_path }}/resized{{ page.url }}
@@ -14,6 +15,7 @@
 {%- endcapture -%}
 
 <div class="image-container {{ include.class }}" style="{{ include.style }}">
+  <div class="gap loading-skeleton"  data-ratio="{{ ratio }}">
   {% if include.clickable != false %}
     <a href="{{ srcoriginal }}">
   {% endif %}
@@ -29,15 +31,15 @@
       <source media="(max-width: {{ i.width }}px)" data-srcset="{{ srcresized }}.jpg" type="image/jpg">
     {% endfor %}
     
-    <source data-srcset="{{ src }}.webP" type="image/webp">
-    <source data-srcset="{{ src }}.jpg" type="image/jpg">
+    <source srcset="{{ src }}.webP" type="image/webp">
+    <source srcset="{{ src }}.jpg" type="image/jpg">
     <img class="lazy" data-src="{{ src }}.jpg" alt="{{ alt }}">
   </picture>
   {% if include.clickable != false %}
     </a>
   {% endif %}
-
-  <p style="padding: 0px 32px;">
+  </div>
+  <p style="padding: 0px 32px; padding-top: 5px;">
     {{ include.caption }}
   </p>
 </div>
