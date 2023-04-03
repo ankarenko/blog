@@ -20,11 +20,10 @@ layout: compress
         var isMobile = document.body.clientWidth <= 720;
         var els = document.getElementsByClassName("gap");
         var width = isMobile? document.body.clientWidth : (document.getElementsByTagName('section')[0].clientWidth - 32);
-        console.log(width);
+        
         for (let i=0; i < els.length; ++i) {
           var el = els[i];
           var newHeight = width * parseFloat(el.dataset.ratio);
-          console.log(newHeight);
           el.style = "position: relative; height:" + newHeight + "px; width: 100%;";
         }
       };

@@ -31,8 +31,8 @@
       <source media="(max-width: {{ i.width }}px)" data-srcset="{{ srcresized }}.jpg" type="image/jpg">
     {% endfor %}
     
-    <source srcset="{{ src }}.webP" type="image/webp">
-    <source srcset="{{ src }}.jpg" type="image/jpg">
+    <source data-srcset="{{ src }}.webP" type="image/webp">
+    <source data-srcset="{{ src }}.jpg" type="image/jpg">
     <img class="lazy" data-src="{{ src }}.jpg" alt="{{ alt }}">
   </picture>
   {% if include.clickable != false %}
