@@ -36,6 +36,45 @@ layout: compress
     </script>
 
     <script>
+      var url = "https://open.er-api.com/v6/latest/USD";
+      var rates = {};
+
+      fetch(url, { cache: "no-store" })
+      .then(response => response.json())
+      .then(json => {
+        if (json.result === 'success') {
+          rates = json.rates;
+        }
+      })
+      .catch(err => console.log(err))
+      .finally(() => {
+        var els = document.getElementsByClassName("rate");
+        
+        for (let i=0; i < els.length; ++i) {
+          var el = els[i];
+          var sym = el.dataset.sym;
+          var label = el.dataset.label;
+          var value = parseFloat(el.dataset.value);
+          var nosym = el.dataset.nosym !== undefined;
+          var r = parseFloat(rates[sym.toUpperCase()]);
+
+          el.textContent = value + (nosym? "" : (" " + sym.toUpperCase()));
+
+          if (!isNaN(r)) {
+            var dollars = Math.round((value / r * 100)) / 100;
+            var element = document.createElement("span");
+            element.className = "dollar";
+            element.textContent = dollars;
+            el.appendChild(element);
+          }
+        }
+      })
+
+      
+
+    </script>
+    
+    <script>
        var lazyLoad = new LazyLoad({
         elements_selector: ".lazy",
         cancel_on_exit: true

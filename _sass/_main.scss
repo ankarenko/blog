@@ -239,15 +239,17 @@ strong, b {
 }
 
 table {
-  border: 1px solid rgb(113, 113, 113);
-  border-radius: 10px;
+  border: 1px solid rgb(204, 204, 204);
   padding: 5px;
   margin: 10px 0px ;
+  border-right: 0px;
+  border-left: 0px;
 }
 
 table, td {
   text-align: center;
 }
+
 
 main {
 	display:flex;
@@ -265,6 +267,11 @@ header li {
 }
 div.image-container, p.alert {
   border-radius: 0px;
+  margin-right: -32px;
+  margin-left: -32px;
+}
+
+table {
   margin-right: -32px;
   margin-left: -32px;
 }
@@ -329,4 +336,23 @@ figcaption {
 
 a {
   //text-decoration: underline rgb(143, 170, 196) 6px;
+}
+
+span.rate {
+  font-style: italic;
+}
+
+span.rate .dollar {
+  background-color: rgb(242, 242, 242);
+  //border-radius: 7px;
+  padding: 4px 5px;
+  margin: 0px 5px;
+  text-align: center;
+  font-size: 14px;
+  color: #242424;
+  font-style: italic;
+}
+
+span.rate .dollar::before {
+  content: "$";
 }
