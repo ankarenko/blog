@@ -36,6 +36,12 @@ layout: compress
     </script>
 
     <script>
+      function numberWithSpaces(x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        return parts.join(".");
+      }
+
       var url = "https://open.er-api.com/v6/latest/USD";
       var rates = {};
 
@@ -58,10 +64,10 @@ layout: compress
           var nosym = el.dataset.nosym !== undefined;
           var r = parseFloat(rates[sym.toUpperCase()]);
 
-          el.textContent = value + (nosym? "" : (" " + sym.toUpperCase()));
+          el.textContent = numberWithSpaces(value) + (nosym? "" : (" " + sym.toUpperCase()));
 
           if (!isNaN(r)) {
-            var dollars = Math.round((value / r * 100)) / 100;
+            var dollars = numberWithSpaces(Math.round((value / r * 100)) / 100);
             var element = document.createElement("span");
             element.className = "dollar";
             element.textContent = dollars;
