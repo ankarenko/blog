@@ -17,19 +17,17 @@ jobs:
           fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
           lfs: 'true'
 
-      - name: Get changed files
-        id: changed-files
-        with:
-          files: raw
-          separator: ","
-          since_last_remote_commit: true
+      - name: Get changed files in the docs folder
+        id: changed-files-specific
         uses: tj-actions/changed-files@v35
+        with:
+          files: assets/images/*.{jpg,webP}  # Alternatively using: `docs/**` or `docs`
 
-      - name: List all changed files
+      - name: Run step if any file(s) in the docs folder change
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
         run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed"
-          done
+          echo "One or more files in the docs folder has changed."
+          echo "List all the files that have changed: ${{ steps.changed-files-specific.outputs.all_changed_files }}"
 
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v3
