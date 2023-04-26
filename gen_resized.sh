@@ -4,7 +4,7 @@ IMAGE_DIRECTORY=${PWD}/assets/images
 OUTPUT_WS=(1100 800 700)
 SIZES=("lg" "md" "sm")
 
-for d in  $IMAGE_DIRECTORY/*; do
+for d in  $IMAGE_DIRECTORY/2023-03-05-pico-de-orizaba; do
   if [[ "$d" != *"20"* ]]; then
     continue
   fi
