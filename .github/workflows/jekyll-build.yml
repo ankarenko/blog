@@ -43,6 +43,7 @@ jobs:
           path: assets/images/resized
           key: ${{ runner.os }}-images-resized
 
+
       - name: Generating resized images
         run: ./gen_resized.sh
         shell: bash
