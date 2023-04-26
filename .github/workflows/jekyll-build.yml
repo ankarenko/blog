@@ -13,6 +13,16 @@ jobs:
       
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
+          lfs: 'true'
+
+      - name: Get changed files
+        id: changed-files
+        with:
+          files: raw
+          separator: ","
+        uses: tj-actions/changed-files@v5.2  
 
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v3
@@ -22,9 +32,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      - name: Generating resized images
-        run: ./gen_resized.sh
-        shell: bash
+      #- name: Generating resized images
+      #  run: ./gen_resized.sh
+      #  shell: bash
         
       # Use GitHub Deploy Action to build and deploy to Github
       - uses: jeffreytse/jekyll-deploy-action@v0.4.0
@@ -40,3 +50,5 @@ jobs:
           cname: ''                  # Default is to not use a cname
           actor: ''                  # Default is the GITHUB_ACTOR
           pre_build_commands: ''     # Installing additional dependencies (Arch Linux)
+
+
