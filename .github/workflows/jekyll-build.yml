@@ -26,17 +26,7 @@ jobs:
         with:
           since_last_remote_commit: "true"
           files: assets/images/**/*.jpg  
-
-      - name: Run step if any *.jpg changed
-        if: steps.changed-files.outputs.any_changed == 'true' 
-        run: |
-          for file in ${{ steps.changed-files.outputs.modified_files }}; do
-            echo "$file was changed, processing..."
-            source ./gen_resized.sh $file
-          done
-        shell: bash
         
-
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v3
         with:
@@ -50,9 +40,18 @@ jobs:
           path: assets/images/resized
           key: ${{ runner.os }}-images-resized
 
-
       - name: Generating resized images
         run: ./make.sh
+        shell: bash
+
+      
+      - name: Run step if any *.jpg changed
+        if: steps.changed-files.outputs.any_changed == 'true' 
+        run: |
+          for file in ${{ steps.changed-files.outputs.modified_files }}; do
+            echo "$file was changed, processing..."
+            source ./gen_resized.sh $file
+          done
         shell: bash
         
       # Use GitHub Deploy Action to build and deploy to Github
