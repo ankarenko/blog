@@ -17,20 +17,17 @@ jobs:
           fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
           lfs: 'true'
 
-      - name: print
-        run: ls -a
-
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v35
         with:
-          files: assets/images/**/*.{jpg,webP}  # Alternatively using: `docs/**` or `docs`
+          since_last_remote_commit: "true"
+          files: assets/images/**/*.{jpg,webP}  
 
-      - name: List all added files
+      - name: Run step if any *.jpg, webP file(s) or any file in the static folder change or added
+        if: steps.changed-files-excluded.outputs.any_changed == 'true' 
         run: |
-          for file in ${{ steps.changed-files.outputs.added_files }}; do
-            echo "$file was added"
-          done
+          echo "List all the files that have changed: ${{ steps.changed-files-excluded.outputs.all_changed_files }}"
 
       - name: List all changed files
         run: |
