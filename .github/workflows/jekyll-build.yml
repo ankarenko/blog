@@ -45,7 +45,7 @@ jobs:
 
 
       - name: Generating resized images
-        run: ./gen_resized.sh
+        run: ./make.sh
         shell: bash
         
       # Use GitHub Deploy Action to build and deploy to Github
