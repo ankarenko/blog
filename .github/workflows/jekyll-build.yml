@@ -25,16 +25,11 @@ jobs:
           files: assets/images/**/*.{jpg,webP}  
 
       - name: Run step if any *.jpg, webP file(s) or any file in the static folder change or added
-        if: steps.changed-files-excluded.outputs.any_changed == 'true' 
+        if: steps.changed-files.outputs.any_changed == 'true' 
         run: |
-          echo "List all the files that have changed: ${{ steps.changed-files-excluded.outputs.all_changed_files }}"
+          echo "List all the files that have changed: ${{ steps.changed-files.outputs.all_changed_files }}"
 
-      - name: List all added files
-        run: |
-          for file in ${{ steps.changed-files.outputs.added_files }}; do
-            echo "$file was added"
-          done
-          
+
       - name: List all changed files
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
