@@ -34,6 +34,7 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
+            echo "${{ steps.changed-files.outputs.any_changed }}"
           done
 
       # Use GitHub Actions' cache to cache dependencies on servers
