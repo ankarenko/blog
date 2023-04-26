@@ -26,9 +26,8 @@ jobs:
 
       - name: Run step if any *.jpg, webP file(s) or any file in the static folder change or added
         if: steps.changed-files.outputs.any_changed == 'true' 
-        run: |
-          echo "List all the files that have changed: ${{ steps.changed-files.outputs.all_changed_files }}"
-
+        run: ./test.sh
+        shell: bash
 
       - name: List all changed files
         run: |
