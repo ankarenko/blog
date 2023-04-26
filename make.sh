@@ -1,4 +1,3 @@
-OUTPUT_PATH=${PWD}/assets/images
 IMAGE_DIRECTORY=${PWD}/assets/images
 
 function is_processed () {
@@ -19,17 +18,17 @@ for d in  $IMAGE_DIRECTORY/*; do
 
   echo "Processing $d..."
 
-  mkdir -p $OUTPUT_PATH/resized/$image_folder/default
+  mkdir -p $IMAGE_DIRECTORY/resized/$image_folder/default
   
   for i in $(find "$d" -name '*.jpg'); do 
     filename=$(basename $i .jpg)
-    default_file=$OUTPUT_PATH/resized/$image_folder/default/$filename
+    default_file=$IMAGE_DIRECTORY/resized/$image_folder/default/$filename
     
     if is_processed $default_file.jpg; then
       continue
     fi
 
     echo "Processing $filename"
-    source $PWD/gen_resized.sh $i $default_file $filename
+    source $PWD/gen_resized.sh $i
   done
 done

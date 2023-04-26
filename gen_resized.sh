@@ -1,12 +1,11 @@
-
-
+IMAGE_DIRECTORY=${PWD}/assets/images
 OUTPUT_WS=(1100 800 700)
 SIZES=("lg" "md" "sm")
 
 i=$1
-default_file=$2
-filename=$3
-
+filename=$(basename $i .jpg)
+default_file=$IMAGE_DIRECTORY/resized/$image_folder/default/$filename
+    
 function compress () {
   max_allowed=1000000
   filesize=$(stat --format=%s "$1")
@@ -29,8 +28,8 @@ function make_resized () {
     w=${OUTPUT_WS[$k]}
     s=${SIZES[$k]}
 
-    mkdir -p $OUTPUT_PATH/resized/$image_folder/$s
-    out_file=$OUTPUT_PATH/resized/$image_folder/$s/$2
+    mkdir -p $IMAGE_DIRECTORY/resized/$image_folder/$s
+    out_file=$IMAGE_DIRECTORY/resized/$image_folder/$s/$2
     
     convert \
     $1 \
