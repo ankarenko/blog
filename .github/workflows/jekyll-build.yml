@@ -32,7 +32,7 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.modified_files }}; do
             echo "$file was changed, processing..."
-            source ./gen_resized.sh
+            source ./gen_resized.sh $file
           done
         shell: bash
         

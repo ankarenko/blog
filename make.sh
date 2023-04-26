@@ -29,6 +29,7 @@ for d in  $IMAGE_DIRECTORY/*; do
     fi
 
     echo "Processing $filename"
+    echo $i
     source $PWD/gen_resized.sh $i
   done
 done
