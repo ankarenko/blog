@@ -4,6 +4,8 @@ SIZES=("lg" "md" "sm")
 
 i=$1
 filename=$(basename $i .jpg)
+
+image_folder=$(basename "${i%/*}")
 default_file=$IMAGE_DIRECTORY/resized/$image_folder/default/$filename
     
 function compress () {
