@@ -19,14 +19,7 @@ jobs:
         with:
           fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
           lfs: 'true'
-
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v35
-        with:
-          since_last_remote_commit: "true"
-          files: assets/images/**/*.jpg  
-        
+ 
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v3
         with:
@@ -44,6 +37,12 @@ jobs:
         run: ./make.sh
         shell: bash
 
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35
+        with:
+          since_last_remote_commit: "true"
+          files: assets/images/**/*.jpg  
       
       - name: Run step if any *.jpg changed
         if: steps.changed-files.outputs.any_changed == 'true' 
