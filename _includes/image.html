@@ -33,7 +33,7 @@
     
     <source data-srcset="{{ src }}.webP" type="image/webp">
     <source data-srcset="{{ src }}.jpg" type="image/jpg">
-    <img class="lazy" data-src="{{ src }}.jpg" alt="{{ alt }}">
+    <img width="auto" height="auto" class="lazy" data-src="{{ src }}.jpg" alt="{{ alt }}">
   </picture>
   {% if include.clickable != false %}
     </a>

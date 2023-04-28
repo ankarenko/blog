@@ -3,7 +3,7 @@ layout: post
 title: В Венесуэлу по сухопутной границе
 description: Заметка о том, как делать не надо
 summary: Заметка о том, как делать не надо
-comments: true
+comments: false
 tags: [латинская америка]
 ---
 

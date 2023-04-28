@@ -2,6 +2,13 @@
 layout: default
 ---
 
+{% if page.comments == true %}
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
+<script src="{{ site.baseurl}}/assets/js/firestore.js" type="text/javascript"></script>
+{% endif %}
+
+
 <section class="post">
   <h2 class="title">{{ page.title }}</h2>
   {{ content }}
@@ -16,6 +23,12 @@ layout: default
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time> &middot; {% for tag in page.tags %}
     <a href="{{ site.baseurl }}/tag/{{tag}}">{{tag}}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
   </span>
+
+  {% if page.comments == true %}
+  {%
+    include comments.html
+  %}
+  {% endif %}
 </section>
 
 
