@@ -1,9 +1,30 @@
-links:
-- title: Статьи
-  url: /
-#- title: Обо мне
-#  url: /about
-- title: Поиск
-  url: /search
-- title: Rss
-  url: /atom.xml
+locales:
+  ru:
+    posts:
+      - title: Статьи
+        url: /ru/
+    search:
+      - title: Поиск
+        url: /search/ru/
+    rss:
+      - title: RSS
+        url: /atom.xml
+    languages:
+      - title: "🇬🇧"
+        url: /en/
+        lang: en
+  en:
+    posts:
+      - title: Posts
+        url: /en/
+    search:
+      - title: Search
+        url: /search/en/
+    rss:
+      - title: RSS
+        url: /atom.xml
+    languages:
+      - title: "🇷🇺"
+        url: /ru/
+        lang: ru
+        

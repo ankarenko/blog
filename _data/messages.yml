@@ -1,0 +1,25 @@
+locales:
+  # English translation
+  # -------------------
+  en: &DEFAULT_EN
+    posts: "Posts"
+    search: "Search"
+    tags: "Tags"
+    languages: "Languages"
+    lang_name: "English"
+  
+  en_US:
+    <<: *DEFAULT_EN     # use English translation for en_US
+  en_UK:
+    <<: *DEFAULT_EN     # use English translation for en_UK
+
+  # Russian translation
+  # -------------------
+  ru: &DEFAULT_RU
+    <<: *DEFAULT_EN     # load English values as default
+    posts: "Статьи"
+    search: "Поиск"
+    languages: "Языки"
+    lang_name: "Русский"
+  de_RU:
+    <<: *DEFAULT_RU     # use Russian n translation for de_RU

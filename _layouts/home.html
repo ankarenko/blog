@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+{% unless page.lang %}
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    var userLang = navigator.language || navigator.userLanguage;
+    if ((userLang == "ru") || (userLang == "ru-RU")) {
+      window.location.href = "{{ site.url }}/ru/";
+    }
+    else {
+      window.location.href = "{{ site.url }}/en/";
+    }
+  });
+</script>
+{% endunless %}
+
+<section class="posts">
+  <ul>
+  {% if page.lang %}
+      {% assign posts=site.posts | where:"lang", page.lang %}
+  {% else %}
+      {% assign posts=site.posts %}
+  {% endif %}
+
+  {% for post in posts %}
+  <li><a  style="white-space: initial;" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d-%Y" }}</time></li>
+  {% endfor %}
+
+  {% if posts.size == 0 %}
+    <img style="width: 100%;" src="{{ site.baseurl }}/nothing.png"/>
+  {% endif %}
+  </ul>
+</section>

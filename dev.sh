@@ -5,6 +5,5 @@ docker run --rm \
   jekyll/jekyll:3.8 \
   jekyll \
   serve \
-  --config _config.yml,_config_development.yml \
-  --drafts
+  --config _config.yml,_config_development.yml
 

@@ -38,7 +38,7 @@ plugins:
 collections:
   pages:
     output: true
-    permalink: /:name
+    permalink: /:path
   posts:
     output: true
     permalink: /:year-:month-:day-:slug

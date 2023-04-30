@@ -3,7 +3,7 @@
 {% assign ratio = include.ratio | default: 0.75 %}
 
 {%- capture base -%}
-{{ site.baseurl }}{{ page.images_root_path }}/resized{{ page.url }}
+{{ site.baseurl }}{{ page.images_root_path }}/resized/{{ page.ref | default: page.url | remove_first: "/" }}
 {%- endcapture -%}
 
 {%- capture src -%}

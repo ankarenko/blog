@@ -5,6 +5,7 @@ description: Заметка о том, как делать не надо
 summary: Заметка о том, как делать не надо
 comments: false
 tags: [латинская америка]
+lang: ru
 ---
 
 <br/>

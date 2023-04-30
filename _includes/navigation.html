@@ -3,10 +3,38 @@
   <!--<h1 class="logo">{{ site.title }}</h1>-->
   <nav role="navigation">
 <ul>
-  {% for item in site.data.navigation.links %}
+  {% for i in site.data.navigation.locales[navlang] %}
+
+  {% if i[0] == 'languages' %}
+    {% continue %}
+  {% endif %}
+
+  {% assign item = i[1][0] %}
+
   {% assign url = site.baseurl | append: item.url %}
     <li><a href="{{ url }}" {% if item.url == {{ url }} %} class="active"{% endif %}>{{ item.title }}</a></li>
   {% endfor %}
+
+  {% assign lang_ref_pages=site.pages | where:"ref", page.ref %}
+  {% assign lang_ref_posts=site.posts | where:"ref", page.ref %}
+
+  {% assign lang_ref_pages = lang_ref_pages | concat: lang_ref_posts  | sort: 'lang' %}
+
+  {% for link in site.data.navigation.locales[navlang].languages %}
+    {% assign ref_page=lang_ref_pages | where:"lang", link.lang | first %}
+    {% if ref_page %}
+      <li><a href="{{ site.url }}{{ ref_page.url }}">{{ link.title }}</a></li>
+    {% else %}
+      <li><a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+  
 </ul>
+
 </nav>
 </header>
+
+
+
+
+
