@@ -5,7 +5,7 @@ locales:
         url: /ru/
     search:
       - title: Поиск
-        url: /search/ru/
+        url: /search/ru
     rss:
       - title: Rss
         url: /atom.xml
