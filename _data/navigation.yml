@@ -6,25 +6,26 @@ locales:
     search:
       - title: Поиск
         url: /search/ru
-    rss:
-      - title: Rss
-        url: /atom.xml
+    #rss:
+    #  - title: Rss
+    #    url: /atom.xml
     languages:
       - title: "🇬🇧"
         url: /en/
         lang: en
   en:
     posts:
-      - title: Posts
+      - title: Articles
         url: /en
     search:
       - title: Search
         url: /search/en
-    rss:
-      - title: Rss
-        url: /atom.xml
+    #rss:
+    #  - title: Rss
+    #    url: /atom.xml
     languages:
       - title: "🇷🇺"
         url: /ru
         lang: ru
+
         

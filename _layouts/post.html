@@ -8,6 +8,11 @@ layout: default
   {% assign navlang = site.locale %}
 {% endif %}
 
+
+
+{% assign ref=page.ref | default: "nothing" %}
+{% assign lang_ref_posts=site.posts | where:"ref", ref | where_exp:"item", "item.lang != navlang" %}
+
 {% if page.comments == true %}
 <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
@@ -17,18 +22,38 @@ layout: default
 
 <section class="post">
   <h2 class="title">{{ page.title }}</h2>
+
+  <div style="display: flex; flex-direction: column; text-align: center; align-items: center; justify-content: center; margin-top: 10px;">
+  <div style="margin: 4px 0px;">
+    <span class="meta">
+      {% for tag in page.tags %}
+        <a  class="tag-link" href="{{ site.baseurl }}/tag/{{tag}}/{{ navlang }}">{{tag}}</a>{% unless forloop.last %} {% endunless %}
+      {% endfor %}
+      
+    </span>
+  </div>
+
+ 
+
+
+  <div style="color: rgba(0,0,0,.45); font-style: italic; margin-top: 4px;">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+    {% for p in lang_ref_posts %}
+      <a class="tag-link" href="{{ p.url }}">{{ site.data.messages.locales[p.lang].symbol  }} {{ site.data.messages.locales[p.lang].lang_name }}</a>
+    {% endfor %}
+  </div>
+  </div>
+
+  <div style="margin-top: 15px;">  
   {{ content }}
-  
+  </div>
 
   {%
     include about.html 
     style="center; margin: 30px 0px"
   %}
 
-  <span class="meta">
-    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time> &middot; {% for tag in page.tags %}
-    <a href="{{ site.baseurl }}/tag/{{tag}}/{{ navlang }}">{{tag}}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
-  </span>
+
 
   {% if page.comments == true %}
   {%

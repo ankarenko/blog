@@ -1,3 +1,9 @@
+{% if page.lang %}
+  {% assign navlang = page.lang %}
+{% else %}
+  {% assign navlang = site.locale %}
+{% endif %}
+
 <style>
 	#search-container {
 	    max-width: 100%;
@@ -21,7 +27,7 @@
 
 <!-- Html Elements for Search -->
 <div id="search-container">
-<input type="text" id="search-input" placeholder="Ищем...">
+<input type="text" id="search-input" placeholder="{{ site.data.messages.locales[navlang].searching }}...">
 <ol id="results-container"></ol>
 </div>
 

@@ -2,16 +2,15 @@ site: ankarenko.live
 url: https://ankarenko.live
 title: Ankarenko.live
 description: про путешествия и не только.
-twitter:
-  username: #yourusername
-  card: summary
-  creator: #yourusername
 author:
-  twitter: #yourusername
-  name: #yourusername
+  alltrails: https://www.alltrails.com/members/sergey-ankarenko?ref=header
+  github: https://github.com/ankarenko
+  vk: https://vk.com/ankarenko
+  name: Sergei Ankarenko
   avatar: /me.png
   email: #youremail
-  url: yoururl
+github:
+  url: https://github.com/ankarenko/blog
 permalink: pretty
 
 baseurl: ""

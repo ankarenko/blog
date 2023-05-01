@@ -7,6 +7,10 @@ locales:
     tags: "Tags"
     languages: "Languages"
     lang_name: "English"
+    searching: Searching
+    about: Bolivar millionaire, conqueror of cats' hearts, programmer. I've visited 30 countries and I'm not going to stop..
+    about_title: About
+    symbol: "🇬🇧"
   
   en_US:
     <<: *DEFAULT_EN     # use English translation for en_US
@@ -20,6 +24,10 @@ locales:
     posts: "Статьи"
     search: "Поиск"
     languages: "Языки"
+    about: Боливарный миллионер, покоритель кошачих сердец, программист. Посетил 30 стран и не собираюсь останавливаться.
+    about_title: Обо мне
     lang_name: "Русский"
+    searching: Ищем
+    symbol: "🇷🇺"
   de_RU:
     <<: *DEFAULT_RU     # use Russian n translation for de_RU

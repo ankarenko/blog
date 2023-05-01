@@ -19,9 +19,9 @@ layout: default
 <section class="posts">
   <ul>
   {% if page.lang %}
-      {% assign posts=site.posts | where:"lang", page.lang %}
+    {% assign posts=site.posts | where:"lang", page.lang %}
   {% else %}
-      {% assign posts=site.posts %}
+    {% assign posts=site.posts %}
   {% endif %}
 
   {% for post in posts %}
@@ -33,4 +33,5 @@ layout: default
     <a href="/ru">Кликай сюда, чтобы читать на русском</a>
   {% endif %}
   </ul>
+
 </section>
