@@ -8,7 +8,8 @@ locales:
     languages: "Languages"
     lang_name: "English"
     searching: Searching
-    about: Bolivar millionaire, conqueror of cats' hearts, programmer. I've visited 30 countries and I'm not going to stop..
+    nothing_found: "Nothing found"
+    about: Bolivar millionaire, conqueror of cats' hearts, programmer. I've visited 30 countries and planning on visitng more.
     about_title: About
     symbol: "🇬🇧"
   
@@ -27,6 +28,7 @@ locales:
     about: Боливарный миллионер, покоритель кошачих сердец, программист. Посетил 30 стран и не собираюсь останавливаться.
     about_title: Обо мне
     lang_name: "Русский"
+    nothing_found: Ничего не найдено
     searching: Ищем
     symbol: "🇷🇺"
   de_RU:
