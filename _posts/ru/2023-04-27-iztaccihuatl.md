@@ -130,7 +130,7 @@ lang: ru
 {% 
   include image.html 
   file="10"
-  ratio="0.61"
+  ratio="0.682"
   caption="разными цветами обозначены разные участки пути"
 %}
 
