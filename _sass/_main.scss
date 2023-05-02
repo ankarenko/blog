@@ -262,6 +262,11 @@ main {
 
 
 @media screen and (max-width: 567px ) {
+
+.navigation .additional {
+  margin-right: 0px;
+}
+
   .post-item {
     display: block !important;
   }
