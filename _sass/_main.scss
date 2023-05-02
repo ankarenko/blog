@@ -262,6 +262,14 @@ main {
 
 
 @media screen and (max-width: 567px ) {
+  .post-item {
+    display: block !important;
+  }
+  
+  .post-item .time { 
+    text-align: left !important;
+  }
+
 header li {
     display: inline;
 	margin-right: 1rem;
@@ -435,4 +443,14 @@ span.rate .dollar::before {
 
 .contact-icon:hover {
   opacity: 1;
+}
+
+.post-item {
+  display: flex; 
+  justify-content: space-between;
+}
+
+.post-item .time {
+  min-width: 100px; 
+  text-align: right;
 }
