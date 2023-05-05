@@ -7,7 +7,21 @@ layout: default
   <ul>
     {% for post in site.posts %}
     {% if post.tags contains page.tag %}
-    <li><a class="post" style="white-space: initial;" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d-%Y" }}</time></li>
+    <li style="margin-bottom: 10px">
+      <a style="width: 100%;" href="{{ site.baseurl }}{{ post.url }}">
+        <div class="post-item">
+          <div style="white-space: initial;">
+            {{ post.title }}
+          </div>
+          <div class="time">
+            <time style="color: rgba(0,0,0,.45); font-style: italic; padding-left: 0px;" datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%d.%m.%Y" }}
+            </time>
+      
+          </div>
+        </div>
+      </a>
+    </li>
     {% endif %}
     {% endfor %}
   </ul>
