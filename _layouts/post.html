@@ -39,7 +39,18 @@ layout: default
   <div style="color: rgba(0,0,0,.45); font-style: italic; margin-top: 4px;">
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
     {% for p in lang_ref_posts %}
+      <!--
+      {%
+        include lang_selector.html
+        url=p.url
+        lang=p.lang
+        with_label=true
+        class="tag-link"
+        sizes="13px"
+      %}
+      -->
       <a class="tag-link" href="{{ p.url }}">{{ site.data.messages.locales[p.lang].symbol  }} {{ site.data.messages.locales[p.lang].lang_name }}</a>
+      
     {% endfor %}
   </div>
   </div>

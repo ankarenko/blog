@@ -1,0 +1,26 @@
+{% assign link = site.data.navigation.locales[include.lang].languages %}
+{% assign url = include.url | default: link.url %}
+{% assign url = site.url | append: url %}
+{% assign data = site.data.messages.locales[include.lang] %}
+{% assign size = include.sizes | default: "18px" %}
+
+<a 
+  class="{{ include.class }}"
+  {% if link.lang == "en" %}style="margin-bottom: 5px;"{% endif %}
+  
+  href="{{ url }}" 
+  {% if link.url == {{ url }} %} class="active"{% endif %}
+>
+{% if data.image_src %}  
+
+  <img width="{{ size }}" height="{{ size }}" src="{{ data.image_src }}"></img>
+{% else %}
+  {{ data.symbol }}
+  
+{% endif %}
+
+{% if include.with_label %} 
+  {{ data.lang_name }}
+{% endif %}
+</a>
+

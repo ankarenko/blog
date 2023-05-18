@@ -25,6 +25,7 @@ locales:
     #    url: /atom.xml
     languages:
       - title: "🇷🇺"
+        image_src: "/rus.png"
         url: /ru
         lang: ru
 

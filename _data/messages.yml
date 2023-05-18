@@ -31,5 +31,6 @@ locales:
     nothing_found: Ничего не найдено
     searching: Ищем
     symbol: "🇷🇺"
+    image_src: "/rus.png"
   de_RU:
     <<: *DEFAULT_RU     # use Russian n translation for de_RU
