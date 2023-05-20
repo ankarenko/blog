@@ -32,6 +32,7 @@ jobs:
         with:
           path: assets/images/resized
           key: ${{ runner.os }}-images-resized
+          restore-keys: ${{ runner.os }}-images-resized #?
 
       - name: Generating resized images
         run: ./make.sh
