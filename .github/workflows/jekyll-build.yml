@@ -28,8 +28,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-
-    shell: bash
       - name: Get Date
         id: get-date
         run: |
