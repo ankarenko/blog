@@ -34,6 +34,7 @@ jobs:
         id: get-date
         run: |
           echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
+        shell: bash
 
       - uses: actions/cache@v3
         with:
@@ -60,4 +61,4 @@ jobs:
             source ./gen_resized.sh $file
           done
         shell: bash
-
+        
