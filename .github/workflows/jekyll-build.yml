@@ -61,7 +61,7 @@ jobs:
         shell: bash
         
       # Use GitHub Deploy Action to build and deploy to Github
-      - uses: malachi-constant/jekyll-deploy-action@v0.4.0
+      - uses: ankarenko/jekyll-deploy-action
         with:
           provider: 'github'
           token: ${{ secrets.GITHUB_TOKEN }} # It's your Personal Access Token(PAT)
