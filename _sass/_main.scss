@@ -79,7 +79,7 @@ p.mark::before {
 }
 
 .mark.red::before {
-  background-color: #fd7777;
+  background-color: hsl(0, 97%, 73%);
 }
 
 .mark.blue::before {
@@ -458,4 +458,51 @@ span.rate .dollar::before {
 .post-item .time {
   min-width: 100px; 
   text-align: right;
+}
+
+blockquote {
+  margin: 0;
+  color: #000000be;
+  padding: 10px 10px 10px 50px;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  
+  }
+  blockquote:before {
+  content: "\201C";
+  font-family: serif;
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  color: white;
+  background: hsl(0, 97%, 73%);;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 30px;
+  line-height: 1.35;
+  text-align: center;
+  }
+  blockquote p {
+  margin: 0 0 16px;
+  font-style: italic;
+  letter-spacing: .05em;
+  line-height: 1.4;
+  }
+  blockquote cite {
+
+  font-style: italic;
+  }
+
+@media screen and (max-width: 567px ) {
+
+blockquote {
+  
+  border-left: none;
+}
+
+blockquote:before {
+  left: 5px;
+}
+  
 }

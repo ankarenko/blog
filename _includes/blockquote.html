@@ -1,0 +1,11 @@
+{% assign text = include.text %}
+{% assign cite = include.cite %}
+
+<blockquote>
+  <p>{{ include.text }}</p>
+  <footer> — <cite>{{ include.cite }} 
+  {% if include.link != "" %}
+    <a href="{{ include.link }}">(ссылка)</a>
+  {% endif %}
+    </cite></footer>
+</blockquote>
