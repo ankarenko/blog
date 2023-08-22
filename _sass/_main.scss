@@ -235,7 +235,56 @@ strong, b {
 }
 
 .post ul, .project ul, .post ol  {
+  padding-left: 1rem;
 	//list-style-position: inside;
+}
+
+.post ul, .project ul, .post ol li {
+  padding-left: 3px;
+}
+.post ol li::marker  {
+  font-weight: bold;
+  font-style: italic;
+	//list-style-position: inside;
+}
+
+details summary {
+  font-style: italic;
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 17px;
+  background-color: #ffff8e;
+  border-radius: $base-rounding;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 567px ) {
+  details summary {
+    border-radius: 0px;
+    margin-right: -32px;
+    margin-left: -32px;
+  }
+}
+
+details {
+  background-color: #fdfdfd;
+}
+
+ul ol {
+  padding: 7px 0px;
+}
+
+details li {
+  padding: 7px 0px;
+}
+
+details[open] summary {
+  margin-bottom: 1rem;
+  
+}
+
+details[open] {
+  padding-bottom: 1rem;
 }
 
 table {
