@@ -266,6 +266,28 @@ details summary {
   }
 }
 
+header {
+  width: 100%;
+  height: 17vh;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+}
+header h1 {
+  position: relative;
+  left: 0%;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 600;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;   
+}
+header .header-1{
+  background-image: repeating-radial-gradient(closest-side at 40px 40px,#4ca3dd, #e95e42, #2a86c4);
+}
+
+
 details {
   background-color: #fdfdfd;
 }
