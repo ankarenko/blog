@@ -287,6 +287,22 @@ header .header-1{
   background-image: repeating-radial-gradient(closest-side at 40px 40px,#4ca3dd, #e95e42, #2a86c4);
 }
 
+.container-images {
+  display: flex;
+}
+
+.container-images div:first-child {
+  margin-right: 5px;
+}
+
+.container-images .image-container {
+  margin: 0px;
+}
+
+.container-images div:last-child {
+  margin-left: 5px;
+}
+
 
 details {
   background-color: #fdfdfd;
