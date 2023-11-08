@@ -287,20 +287,39 @@ header .header-1{
   background-image: repeating-radial-gradient(closest-side at 40px 40px,#4ca3dd, #e95e42, #2a86c4);
 }
 
-.container-images {
-  display: flex;
+.container-images .mobile {
+  display: block;
 }
 
-.container-images div:first-child {
-  margin-right: 5px;
+.container-images .desktop {
+  display: none;
 }
 
-.container-images .image-container {
-  margin: 0px;
-}
 
-.container-images div:last-child {
-  margin-left: 5px;
+@media screen and (min-width: 568px ) {
+  .container-images {
+    display: flex;
+  }
+
+  .container-images .desktop {
+    display: block;
+  }
+
+  .container-images .mobile {
+    display: none;
+  }
+  
+  .container-images div:first-child {
+    margin-right: 5px;
+  }
+  
+  .container-images .image-container {
+    margin: 0px;
+  }
+  
+  .container-images div:last-child {
+    margin-left: 5px;
+  }
 }
 
 
