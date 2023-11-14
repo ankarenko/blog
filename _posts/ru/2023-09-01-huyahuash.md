@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Huyahuash - один из красивейших хайков на Земле
-description: очень красивый хайк
+title: Huyahuash - один из красивейших хайков в мире
+description: один из красивейших хайков в мире
 comments: false
 tags: [перу, хайкинг, латам]
 lang: ru
